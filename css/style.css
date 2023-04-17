@@ -3,6 +3,15 @@ body {
     margin: 0px;
 }
 
+.skip {
+    position: absolute;
+    left: -10000px;
+}
+
+.skip:focus {
+    left: 0px;
+}
+
 .nav {
     background-color: rgb(181, 137, 84);
     width: 100%;
@@ -51,7 +60,7 @@ header {
     grid-template-columns: 1fr;
     text-align: center;
     color: rgb(181, 137, 84);
-    font-family: 'Bree Serif', serif;;
+    font-family: 'Bree Serif', serif;
 }
 
 h1 {
@@ -128,6 +137,46 @@ h3 {
     width: 100%;
     vertical-align: middle;
     margin: auto;
+    }
+
+
+    .flip-card {
+        height: 100%;
+        width: 100%;
+        position: relative;
+        transition: transform 1500ms;
+        transform-style: preserve-3d;
+    }
+
+    .card-container:hover > .flip-card{
+        cursor: pointer;
+        transform: rotateY(180deg);
+    }
+
+    .front, .back {
+        height: 100%;
+        width: 100%;
+        box-shadow: 0 0 5px 3px rgba(0,0,0,0.2);
+        position: absolute;
+        backface-visibility: hidden;
+        padding: 0px 5px 0px 5px;
+    }
+
+    .back {
+        transform: rotateY(180deg);
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    footer {
+        background-color: rgb(181, 137, 84);
+        color: white;
+        text-align: center;
+        font-family: 'Bree Serif', serif;
+        padding-top: 10px;
+        margin-top: 20px;
     }
 
 
